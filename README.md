@@ -1,6 +1,10 @@
 # Glen-UR3-Soft-Gripper
 Repositorio Glen Guerrero de la simulación de una pinza de robótica blanda con el robot UR3
 
+<img width="350" src="https://github.com/user-attachments/assets/605314a3-d461-4dd1-906a-0e9c80611680" />
+<img width="350" src="https://github.com/user-attachments/assets/5e953782-97be-4d4b-83f6-717f6143be54" />
+
+
 # Robótica Blanda aplicada al Cobot UR3
 
 **Diseño CAD y análisis comparativo en ROS 2 de una pinza bioinspirada frente a efectores rígidos**
@@ -160,6 +164,10 @@ El cuaderno reproduce, a partir de los Excel de resultados, las tasas de éxito 
 intervalos de confianza de Wilson, las pruebas de significación (chi‑cuadrado / Fisher),
 la regresión logística y todas las figuras del análisis.
 
+<img width="320" src="https://github.com/user-attachments/assets/e6725216-21d3-4f1b-910d-3b615759fc2b" />
+<img width="320" src="https://github.com/user-attachments/assets/1eab2e0e-bab0-454b-9207-4e7d7a376176" />
+
+
 ---
 
 ## Los efectores
@@ -172,12 +180,19 @@ empleado (DART) no soporta restricciones de acoplamiento (`mimic`), las articula
 mecanismo se **actúan de forma coordinada** desde el controlador, reproduciendo el cierre
 envolvente característico de la pinza blanda.
 
+<img width="300" src="https://github.com/user-attachments/assets/a0461edb-62b5-4cc3-8a6e-d8237eed9d06" />
+<img width="300" src="https://github.com/user-attachments/assets/9e9c212e-c158-4d1b-bf3a-075e3d4882c3" />
+
+
 ### Pinza rígida Robotiq 2F‑85
 
 Pinza paralela comercial de dos dedos, empleada como referencia rígida para la comparación.
 Su descripción procede del paquete **`robotiq_description`** (ver *Créditos*). Para su
 simulación en Gazebo se adaptó la macro eliminando las restricciones `mimic` y actuando sus
 seis articulaciones de forma coordinada con los signos propios del mecanismo de cuatro barras.
+
+<img width="300" src="https://github.com/user-attachments/assets/ed23cdae-4427-4105-ab6f-434e6c677f59" />
+<img width="300" src="https://github.com/user-attachments/assets/c74bc701-0f6d-481f-a38b-aeff7a997086" />
 
 ---
 
