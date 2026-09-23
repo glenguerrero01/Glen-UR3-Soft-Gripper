@@ -14,8 +14,7 @@ Autor: **Glen Alejandro Guerrero Burbano**.
 
 Este repositorio contiene la celda robótica, los efectores y el marco de evaluación
 desarrollados para comparar el desempeño de agarre de una **pinza blanda bioinspirada**
-(diseñada en este trabajo) frente a una **pinza rígida comercial** (Robotiq 2F‑85),
-montadas sobre un cobot **Universal Robots UR3** y simuladas en **ROS 2 + Gazebo**.
+frente a una **pinza rígida comercial** (Robotiq 2F‑85), montadas sobre un cobot **Universal Robots UR3** y simuladas en **ROS 2 + Gazebo**.
 
 El proyecto abarca:
 
@@ -25,7 +24,6 @@ El proyecto abarca:
   registro del resultado) para objetos de geometría cilíndrica, esférica y cúbica.
 - Un cuaderno de análisis estadístico reproducible (tasa de éxito, intervalos de Wilson,
   chi‑cuadrado, regresión logística) que sustenta la comparación.
-
 ---
 
 ## Requisitos
@@ -127,10 +125,6 @@ ros2 launch robot_description_ur3 view_rviz.launch.py ur_type:=ur3
 ros2 launch robot_control_ur3 gz_moveit_ur3.launch.py
 ```
 
-> En Gazebo Harmonic la simulación puede arrancar en pausa: pulsar **play (▶)** para que
-> avancen el reloj y los controladores. En máquinas virtuales sin aceleración gráfica,
-> anteponer `export LIBGL_ALWAYS_SOFTWARE=1`.
-
 ### Seleccionar el efector
 
 El efector activo se define en `robot_cell_macro.xacro` (el *include* y la llamada de
@@ -170,7 +164,7 @@ la regresión logística y todas las figuras del análisis.
 
 ## Los efectores
 
-### Pinza blanda bioinspirada (aportación propia)
+### Pinza blanda bioinspirada
 
 Dedo bioinspirado con cámaras de aire, diseñado en CAD y modelado en simulación mediante
 una **discretización pseudo‑rígida** en segmentos articulados. Dado que el motor de física
@@ -207,8 +201,7 @@ El brazo **UR3** y sus mallas son propiedad de **Universal Robots A/S** (paquete
 ### Adaptación docente de la celda
 
 La celda robótica base (mesa, suelo, paredes, plato de montaje y elementos institucionales)
-fue adaptada por el profesor **Daniel Vicente Rodrigo Muñoz** (Universidad Europea) para el
-laboratorio del Máster, sobre la base del tutorial de UR.
+fue adaptada por la **Universidad Europea** para el laboratorio del Máster en Robótica y Automatización, sobre la base del tutorial de UR.
 
 ### Pinza rígida Robotiq 2F‑85
 
@@ -220,9 +213,6 @@ se adaptó para su simulación en Gazebo (eliminación de `mimic` y actuación c
 articulaciones). Licencia del paquete original: **BSD‑3‑Clause**.
 
 ### Otros recursos de terceros
-
-- **Euro pallet w/ stacked boxes** — *jfrascon* (Open Robotics Fuel), **CC BY 4.0**.
-- **Threshold Porcelain Coffee Mug** — *GoogleResearch* (Open Robotics Fuel), **CC BY 4.0**.
 
 El detalle completo de licencias de terceros se encuentra en
 `robot_description_ur3/CREDITS-THIRDPARTY.md`.
