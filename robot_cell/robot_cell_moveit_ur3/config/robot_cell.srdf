@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="robot_cell">
+    <!-- ===================== GRUPOS ===================== -->
+    <group name="ur_arm">
+        <chain base_link="ur3_base_link" tip_link="ur3_tool0"/>
+    </group>
+    <group name="gripper">
+        <joint name="g_left_joint"/>
+        <joint name="g_left_j23"/>
+        <joint name="g_left_j34"/>
+        <joint name="g_right_joint"/>
+        <joint name="g_right_j23"/>
+        <joint name="g_right_j34"/>
+    </group>
+
+    <!-- ===================== ESTADO AGARRE CENITAL ===================== -->
+    
+    <group_state name="init" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="0.959931"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.680678"/>
+        <joint name="ur3_shoulder_pan_joint" value="0.279253"/>
+        <joint name="ur3_wrist_1_joint" value="1.256637"/>
+        <joint name="ur3_wrist_2_joint" value="1.570796"/>
+        <joint name="ur3_wrist_3_joint" value="-2.862334"/>
+    </group_state>
+    <!-- ===================== ESTADO AGARRE CENITAL cilindro inclionado 110 y 120===================== -->
+ <!--
+ 
+    <group_state name="init_1" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.0123"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.5934"/>
+        <joint name="ur3_shoulder_pan_joint" value="0.2793"/>
+        <joint name="ur3_wrist_1_joint" value="1.1345"/>
+        <joint name="ur3_wrist_2_joint" value="1.5708"/>
+        <joint name="ur3_wrist_3_joint" value="-2.8623"/>
+    </group_state>
+-->
+<!-- ===================== ESTADO AGARRE CENITAL esfera inclionado valores <80 ===================== -->
+ <!--
+    <group_state name="init_1" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.012291"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.575959"/>
+        <joint name="ur3_shoulder_pan_joint" value="0.279253"/>
+        <joint name="ur3_wrist_1_joint" value="1.134464"/>
+        <joint name="ur3_wrist_2_joint" value="1.570796"/>
+        <joint name="ur3_wrist_3_joint" value="-2.8449"/>
+    </group_state>
+-->
+
+<!-- ===================== ESTADO AGARRE CENITAL esfera inclionado valores 80 ===================== -->
+ <!--
+    <group_state name="init_1" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.0297"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.6109"/>
+        <joint name="ur3_shoulder_pan_joint" value="0.2793"/>
+        <joint name="ur3_wrist_1_joint" value="1.1345"/>
+        <joint name="ur3_wrist_2_joint" value="1.5708"/>
+        <joint name="ur3_wrist_3_joint" value="-2.8449"/>
+    </group_state>
+-->
+    <!-- ===================== ESTADO AGARRE CENITAL cilindro pie ===================== -->
+  <!--
+    <group_state name="init_1" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="0.9774"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.6458"/>
+        <joint name="ur3_shoulder_pan_joint" value="0.2793"/>
+        <joint name="ur3_wrist_1_joint" value="1.2392"/>
+        <joint name="ur3_wrist_2_joint" value="1.5708"/>
+        <joint name="ur3_wrist_3_joint" value="-2.8623"/>
+    </group_state>
+-->
+    <!-- ===================== ESTADO AGARRE CENITAL cilindro pie alto===================== -->
+ 
+    <group_state name="init_1" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="0.942478"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.645772"/>
+        <joint name="ur3_shoulder_pan_joint" value="0.279253"/>
+        <joint name="ur3_wrist_1_joint" value="1.27409"/>
+        <joint name="ur3_wrist_2_joint" value="1.5708"/>
+        <joint name="ur3_wrist_3_joint" value="-2.86234"/>
+    </group_state>
+
+    <!-- ===================== EESTADO AGARRE LATERAL PIEZA ===================== -->
+    <group_state name="cerca_C" group="ur_arm">
+        <joint name="ur3_shoulder_pan_joint"  value="0.0000"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.4189"/>
+        <joint name="ur3_elbow_joint"         value="1.2915"/>
+        <joint name="ur3_wrist_1_joint"       value="-0.2793"/>
+        <joint name="ur3_wrist_2_joint"       value="0.0000"/>
+        <joint name="ur3_wrist_3_joint"       value="-2.2166"/>
+    </group_state>
+
+    <!-- ===================== ESTADO HOME ROBOT ===================== -->
+    <group_state name="home" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="0"/>
+        <joint name="ur3_shoulder_lift_joint" value="-1.57"/>
+        <joint name="ur3_shoulder_pan_joint" value="0"/>
+        <joint name="ur3_wrist_1_joint" value="-1.57"/>
+        <joint name="ur3_wrist_2_joint" value="0"/>
+        <joint name="ur3_wrist_3_joint" value="0"/>
+    </group_state>
+
+
+            <!-- ===================== ACERCAMIENTO LATERAL A LA PIEZA ===================== -->
+    <group_state name="cerca_B" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.692969"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.907571"/>
+        <joint name="ur3_shoulder_pan_joint" value="-0.523599"/>
+        <joint name="ur3_wrist_1_joint" value="-0.785398"/>
+        <joint name="ur3_wrist_2_joint" value="-0.523599"/>
+        <joint name="ur3_wrist_3_joint" value="-1.658063"/>
+    </group_state>
+    <!-- ===================== ACERCAMIENTO CENITAL A LA PIEZA ===================== -->
+    <group_state name="cerca_A" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="0.575959"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.733038"/>
+        <joint name="ur3_shoulder_pan_joint" value="0.279253"/>
+        <joint name="ur3_wrist_1_joint" value="1.710423"/>
+        <joint name="ur3_wrist_2_joint" value="1.570796"/>
+        <joint name="ur3_wrist_3_joint" value="-2.862334"/>
+    </group_state>
+
+ <!-- ===================== PUNTO INTERMEDIO CENITAL PIEZA ===================== -->
+  <group_state name="inter_C" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="0.575959"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.733038"/>
+        <joint name="ur3_shoulder_pan_joint" value="-3.08923"/>
+        <joint name="ur3_wrist_1_joint" value="1.71042"/>
+        <joint name="ur3_wrist_2_joint" value="1.5708"/>
+        <joint name="ur3_wrist_3_joint" value="-2.86234"/>
+    </group_state>
+<!-- 
+    <group_state name="inter_C" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.308997"/>
+        <joint name="ur3_shoulder_lift_joint" value="-1.291544"/>
+        <joint name="ur3_shoulder_pan_joint" value="-3.106686"/>
+        <joint name="ur3_wrist_1_joint" value="-1.570796"/>
+        <joint name="ur3_wrist_2_joint" value="-1.588250"/>
+        <joint name="ur3_wrist_3_joint" value="0.052360"/>
+    </group_state>
+    -->
+
+ <!-- ===================== PUNTO INTERMEDIO LATERA PIEZA ===================== -->
+    <group_state name="inter_L" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.274090"/>
+        <joint name="ur3_shoulder_lift_joint" value="-1.082104"/>
+        <joint name="ur3_shoulder_pan_joint" value="2.810157"/>
+        <joint name="ur3_wrist_1_joint" value="0.069813"/>
+        <joint name="ur3_wrist_2_joint" value="0.000000"/>
+        <joint name="ur3_wrist_3_joint" value="-1.832596"/>
+    </group_state>
+
+ <!-- ===================== PUNTO SOLTAR LATERAL PIEZA ===================== -->
+
+    <group_state name="drop_off_L" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.483530"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.610865"/>
+        <joint name="ur3_shoulder_pan_joint" value="2.810157"/>
+        <joint name="ur3_wrist_1_joint" value="-0.314159"/>
+        <joint name="ur3_wrist_2_joint" value="0.000000"/>
+        <joint name="ur3_wrist_3_joint" value="-2.164208"/>
+    </group_state>
+
+ <!-- ===================== PUNTO SOLTAR CENITAL PIEZA ===================== -->
+
+    <group_state name="drop_off_C" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="1.02974"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.628319"/>
+        <joint name="ur3_shoulder_pan_joint" value="-3.08923"/>
+        <joint name="ur3_wrist_1_joint" value="1.15192"/>
+        <joint name="ur3_wrist_2_joint" value="1.55334"/>
+        <joint name="ur3_wrist_3_joint" value="-2.28638"/>
+    </group_state>
+
+
+<!--
+    <group_state name="drop_off_C" group="ur_arm">
+        <joint name="ur3_elbow_joint" value="0.9774"/>
+        <joint name="ur3_shoulder_lift_joint" value="-0.6981"/>
+        <joint name="ur3_shoulder_pan_joint" value="-3.0892"/>
+        <joint name="ur3_wrist_1_joint" value="1.2741"/>
+        <joint name="ur3_wrist_2_joint" value="1.5533"/>
+        <joint name="ur3_wrist_3_joint" value="-2.2864"/>
+    </group_state>
+
+    -->
+    <!-- Gripper en radianes: open = dedos rectos, close = curvados -->
+    <group_state name="open" group="gripper">
+        <joint name="g_left_joint"  value="0.0"/>
+        <joint name="g_left_j23"    value="0.0"/>
+        <joint name="g_left_j34"    value="0.0"/>
+        <joint name="g_right_joint" value="0.0"/>
+        <joint name="g_right_j23"   value="0.0"/>
+        <joint name="g_right_j34"   value="0.0"/>
+    </group_state>
+    
+    <group_state name="close" group="gripper">
+        <joint name="g_left_joint"  value="0.47"/>
+        <joint name="g_left_j23"    value="0.47"/>
+        <joint name="g_left_j34"    value="0.47"/>
+        <joint name="g_right_joint" value="0.47"/>
+        <joint name="g_right_j23"   value="0.47"/>
+        <joint name="g_right_j34"   value="0.47"/>
+    </group_state>
+    
+<!--
+    <group_state name="close" group="gripper">
+        <joint name="g_left_joint"  value="0.35"/>
+        <joint name="g_left_j23"    value="0.35"/>
+        <joint name="g_left_j34"    value="0.35"/>
+        <joint name="g_right_joint" value="0.35"/>
+        <joint name="g_right_j23"   value="0.35"/>
+        <joint name="g_right_j34"   value="0.35"/>
+    </group_state>
+-->
+    <!-- ===================== END EFFECTOR ===================== -->
+    <end_effector name="gripper" parent_link="ur3_tool0" group="gripper" parent_group="ur_arm"/>
+
+    <!-- ===================== JUNTAS PASIVAS ===================== -->
+    <!-- (opcion B) las 6 juntas del gripper se actuan; no hay juntas pasivas -->
+
+    <!-- ===================== COLISIONES ===================== -->
+
+    <!-- Adyacencias de la pinza blanda (se tocan por diseño) -->
+    <disable_collisions link1="g_base"       link2="g_left_seg1"  reason="Adjacent"/>
+    <disable_collisions link1="g_left_seg1"  link2="g_left_seg2"  reason="Adjacent"/>
+    <disable_collisions link1="g_left_seg2"  link2="g_left_seg3"  reason="Adjacent"/>
+    <disable_collisions link1="g_left_seg3"  link2="g_left_seg4"  reason="Adjacent"/>
+    <disable_collisions link1="g_base"       link2="g_right_seg1" reason="Adjacent"/>
+    <disable_collisions link1="g_right_seg1" link2="g_right_seg2" reason="Adjacent"/>
+    <disable_collisions link1="g_right_seg2" link2="g_right_seg3" reason="Adjacent"/>
+    <disable_collisions link1="g_right_seg3" link2="g_right_seg4" reason="Adjacent"/>
+    <!-- Evita falsos positivos entre base y 2o segmento al curvarse, y entre dedos -->
+    <disable_collisions link1="g_base"       link2="g_left_seg2"  reason="Never"/>
+    <disable_collisions link1="g_base"       link2="g_right_seg2" reason="Never"/>
+    <disable_collisions link1="g_left_seg1"  link2="g_right_seg1" reason="Never"/>
+
+    <!-- Pares NO adyacentes que se tocan al curvarse el dedo -->
+    <disable_collisions link1="g_left_seg1"  link2="g_left_seg3"  reason="Never"/>
+    <disable_collisions link1="g_left_seg1"  link2="g_left_seg4"  reason="Never"/>
+    <disable_collisions link1="g_left_seg2"  link2="g_left_seg4"  reason="Never"/>
+    <disable_collisions link1="g_right_seg1" link2="g_right_seg3" reason="Never"/>
+    <disable_collisions link1="g_right_seg1" link2="g_right_seg4" reason="Never"/>
+    <disable_collisions link1="g_right_seg2" link2="g_right_seg4" reason="Never"/>
+    <disable_collisions link1="g_base"       link2="g_left_seg3"  reason="Never"/>
+    <disable_collisions link1="g_base"       link2="g_left_seg4"  reason="Never"/>
+    <disable_collisions link1="g_base"       link2="g_right_seg3" reason="Never"/>
+    <disable_collisions link1="g_base"       link2="g_right_seg4" reason="Never"/>
+
+    <!-- Pinza contra la muñeca (el boss piloto entra un poco) -->
+    <disable_collisions link1="g_base"       link2="ur3_wrist_3_link" reason="Adjacent"/>
+    <disable_collisions link1="g_base"       link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="g_base"       link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="g_left_seg1"  link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="g_right_seg1" link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="g_base"       link2="logo_panel" reason="Never"/>
+
+    <!-- Entorno estatico vs acople -->
+    <disable_collisions link1="euro_pallet_stack" link2="g_base" reason="Never"/>
+    <disable_collisions link1="factory_wall_back"  link2="g_base" reason="Never"/>
+    <disable_collisions link1="factory_wall_left"  link2="g_base" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="g_base" reason="Never"/>
+    <disable_collisions link1="floor" link2="g_base" reason="Never"/>
+
+    <!-- Entorno estatico entre si -->
+    <disable_collisions link1="euro_pallet_stack" link2="factory_wall_back" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="factory_wall_left" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="factory_wall_right" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="floor" reason="Adjacent"/>
+    <disable_collisions link1="euro_pallet_stack" link2="logo_panel" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="pedestal" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="robot_mount" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="ur3_base_link_inertia" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="ur3_forearm_link" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="ur3_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="euro_pallet_stack" link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="factory_wall_left" reason="Default"/>
+    <disable_collisions link1="factory_wall_back" link2="factory_wall_right" reason="Default"/>
+    <disable_collisions link1="factory_wall_back" link2="floor" reason="Adjacent"/>
+    <disable_collisions link1="factory_wall_back" link2="logo_panel" reason="Adjacent"/>
+    <disable_collisions link1="factory_wall_back" link2="pedestal" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="robot_mount" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="ur3_base_link_inertia" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="ur3_forearm_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="ur3_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_back" link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="factory_wall_right" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="floor" reason="Adjacent"/>
+    <disable_collisions link1="factory_wall_left" link2="logo_panel" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="pedestal" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="robot_mount" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="ur3_base_link_inertia" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="ur3_forearm_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="ur3_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_left" link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="floor" reason="Adjacent"/>
+    <disable_collisions link1="factory_wall_right" link2="logo_panel" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="pedestal" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="robot_mount" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="ur3_base_link_inertia" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="ur3_forearm_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="ur3_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="factory_wall_right" link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="floor" link2="logo_panel" reason="Never"/>
+    <disable_collisions link1="floor" link2="pedestal" reason="Adjacent"/>
+    <disable_collisions link1="floor" link2="robot_mount" reason="Never"/>
+    <disable_collisions link1="floor" link2="ur3_base_link_inertia" reason="Never"/>
+    <disable_collisions link1="floor" link2="ur3_forearm_link" reason="Never"/>
+    <disable_collisions link1="floor" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="floor" link2="ur3_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="floor" link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="floor" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="floor" link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="pedestal" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="robot_mount" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="ur3_base_link_inertia" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="ur3_forearm_link" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="ur3_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="logo_panel" link2="ur3_wrist_3_link" reason="Never"/>
+
+    <!-- Cadena del brazo UR3 -->
+    <disable_collisions link1="pedestal" link2="robot_mount" reason="Adjacent"/>
+    <disable_collisions link1="pedestal" link2="ur3_base_link_inertia" reason="Never"/>
+    <disable_collisions link1="pedestal" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="robot_mount" link2="ur3_base_link_inertia" reason="Adjacent"/>
+    <disable_collisions link1="robot_mount" link2="ur3_shoulder_link" reason="Never"/>
+    <disable_collisions link1="ur3_base_link_inertia" link2="ur3_shoulder_link" reason="Adjacent"/>
+    <disable_collisions link1="ur3_forearm_link" link2="ur3_upper_arm_link" reason="Adjacent"/>
+    <disable_collisions link1="ur3_forearm_link" link2="ur3_wrist_1_link" reason="Adjacent"/>
+    <disable_collisions link1="ur3_forearm_link" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="ur3_shoulder_link" link2="ur3_upper_arm_link" reason="Adjacent"/>
+    <disable_collisions link1="ur3_shoulder_link" link2="ur3_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="ur3_shoulder_link" link2="ur3_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="ur3_wrist_1_link" link2="ur3_wrist_2_link" reason="Adjacent"/>
+    <disable_collisions link1="ur3_wrist_1_link" link2="ur3_wrist_3_link" reason="Never"/>
+    <disable_collisions link1="ur3_wrist_2_link" link2="ur3_wrist_3_link" reason="Adjacent"/>
+</robot>

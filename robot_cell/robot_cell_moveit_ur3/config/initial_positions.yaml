@@ -1,0 +1,10 @@
+# Posición inicial del mock hardware al arrancar (coincide con el group_state "home").
+# El brazo aparece recogido en vez de estirado horizontal (pose cero).
+initial_positions:
+  ur3_shoulder_pan_joint: 0.0
+  ur3_shoulder_lift_joint: -1.57
+  ur3_elbow_joint: 0.0
+  ur3_wrist_1_joint: -1.57
+  ur3_wrist_2_joint: 0.0
+  ur3_wrist_3_joint: 0.0
+  g_left_joint: 0.0
