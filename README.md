@@ -4,6 +4,8 @@ Repositorio Glen Guerrero de la simulación de una pinza de robótica blanda con
 <img width="350" src="https://github.com/user-attachments/assets/605314a3-d461-4dd1-906a-0e9c80611680" />
 <img width="350" src="https://github.com/user-attachments/assets/5e953782-97be-4d4b-83f6-717f6143be54" />
 
+Video funcionamiento:
+https://youtu.be/rLLhnFp6kl8
 
 # Robótica Blanda aplicada al Cobot UR3
 
