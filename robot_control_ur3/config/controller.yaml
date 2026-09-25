@@ -1,0 +1,48 @@
+# Controladores ros2_control: UR3 + Robotiq 2F-85.
+# Opcion B: las 6 juntas del gripper se actuan juntas (sin mimic).
+
+controller_manager:
+  ros__parameters:
+    update_rate: 500
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    ur_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    gripper_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+ur_arm_controller:
+  ros__parameters:
+    joints:
+      - ur3_shoulder_pan_joint
+      - ur3_shoulder_lift_joint
+      - ur3_elbow_joint
+      - ur3_wrist_1_joint
+      - ur3_wrist_2_joint
+      - ur3_wrist_3_joint
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]
+    allow_partial_joints_goal: false
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 0.0
+
+gripper_controller:
+  ros__parameters:
+    joints:
+      - g_robotiq_85_left_knuckle_joint
+      - g_robotiq_85_right_knuckle_joint
+      - g_robotiq_85_left_inner_knuckle_joint
+      - g_robotiq_85_right_inner_knuckle_joint
+      - g_robotiq_85_left_finger_tip_joint
+      - g_robotiq_85_right_finger_tip_joint
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]
+    constraints:
+      goal_time: 5.0 #2.0
+      stopped_velocity_tolerance: 0.1 #0.05
